@@ -3,6 +3,7 @@ package com.udacity.jdnd.course4.ecommerce.controller;
 import com.udacity.jdnd.course4.ecommerce.dto.request.CartModifyRequest;
 import com.udacity.jdnd.course4.ecommerce.entities.Cart;
 import com.udacity.jdnd.course4.ecommerce.service.CartService;
+import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,11 @@ public class CartController {
     private static final Logger logger = LoggerFactory.getLogger(CartController.class);
 
     @Autowired
-    private CartService cartService;
+    private final CartService cartService;
+
+    public CartController(CartService cartService) {
+        this.cartService = cartService;
+    }
 
     @PostMapping("/addToCart")
     public ResponseEntity<Cart> addToCart(@RequestBody CartModifyRequest request) {

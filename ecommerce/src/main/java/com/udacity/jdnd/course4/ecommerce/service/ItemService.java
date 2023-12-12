@@ -18,7 +18,11 @@ public class ItemService {
     private static final Logger logger = LoggerFactory.getLogger(ItemService.class);
 
     @Autowired
-    private ItemRepository itemRepository;
+    private final ItemRepository itemRepository;
+
+    public ItemService(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
 
     public ResponseEntity<List<Item>> getAllItems() {
         return ResponseEntity.ok(itemRepository.findAll());

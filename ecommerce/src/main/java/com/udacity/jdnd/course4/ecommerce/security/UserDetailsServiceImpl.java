@@ -1,7 +1,7 @@
 package com.udacity.jdnd.course4.ecommerce.security;
 
-import com.example.demo.model.persistence.User;
-import com.example.demo.model.persistence.repositories.UserRepository;
+import com.udacity.jdnd.course4.ecommerce.entities.User;
+import com.udacity.jdnd.course4.ecommerce.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

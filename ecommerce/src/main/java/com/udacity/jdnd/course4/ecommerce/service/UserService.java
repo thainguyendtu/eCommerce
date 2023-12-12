@@ -20,13 +20,21 @@ public class UserService {
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    private CartRepository cartRepository;
+    private final CartRepository cartRepository;
 
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    public UserService(UserRepository userRepository,
+                       CartRepository cartRepository,
+                       BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.userRepository = userRepository;
+        this.cartRepository = cartRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
 
     public ResponseEntity<User> findById(Long id) {
         return ResponseEntity.of(userRepository.findById(id));

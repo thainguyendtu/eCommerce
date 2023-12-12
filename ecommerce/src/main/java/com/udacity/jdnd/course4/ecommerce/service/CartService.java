@@ -22,13 +22,19 @@ import java.util.stream.IntStream;
 public class CartService {
 
     @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    private ItemRepository itemRepository;
+    private final CartRepository cartRepository;
 
     @Autowired
-    private CartRepository cartRepository;
+    private final ItemRepository itemRepository;
+
+    public CartService(UserRepository userRepository, CartRepository cartRepository, ItemRepository itemRepository) {
+        this.userRepository = userRepository;
+        this.cartRepository = cartRepository;
+        this.itemRepository = itemRepository;
+    }
 
     private static final Logger logger = LoggerFactory.getLogger(CartService.class);
 
