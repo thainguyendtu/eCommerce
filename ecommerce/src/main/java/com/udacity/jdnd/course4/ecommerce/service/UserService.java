@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -26,14 +26,14 @@ public class UserService {
     private final CartRepository cartRepository;
 
     @Autowired
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     public UserService(UserRepository userRepository,
                        CartRepository cartRepository,
-                       BCryptPasswordEncoder bCryptPasswordEncoder) {
+                       PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.cartRepository = cartRepository;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public ResponseEntity<User> findById(Long id) {
@@ -65,7 +65,7 @@ public class UserService {
             return ResponseEntity.badRequest().build();
         }
 
-        user.setPassword(bCryptPasswordEncoder.encode(request.getPassword()));
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
 
         userRepository.save(user);
         logger.info("Create User success");
