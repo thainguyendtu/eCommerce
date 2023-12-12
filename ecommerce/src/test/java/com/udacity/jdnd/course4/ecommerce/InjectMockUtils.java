@@ -6,7 +6,9 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.Field;
 
 public class InjectMockUtils {
+
     private static final Logger logger = LoggerFactory.getLogger(InjectMockUtils.class);
+
     public static void inject(Object objectTarget, String fieldName, Object objectToInject) {
         boolean isPrivate = false;
 

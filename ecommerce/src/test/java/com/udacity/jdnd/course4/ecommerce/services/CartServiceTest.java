@@ -1,7 +1,6 @@
 package com.udacity.jdnd.course4.ecommerce.services;
 
 import com.udacity.jdnd.course4.ecommerce.InjectMockUtils;
-import com.udacity.jdnd.course4.ecommerce.controller.CartController;
 import com.udacity.jdnd.course4.ecommerce.dto.request.CartModifyRequest;
 import com.udacity.jdnd.course4.ecommerce.entities.Cart;
 import com.udacity.jdnd.course4.ecommerce.entities.Item;
@@ -12,7 +11,6 @@ import com.udacity.jdnd.course4.ecommerce.repository.UserRepository;
 import com.udacity.jdnd.course4.ecommerce.service.CartService;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InjectMocks;
 import org.springframework.http.ResponseEntity;
 
 import java.math.BigDecimal;

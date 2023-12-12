@@ -1,7 +1,6 @@
 package com.udacity.jdnd.course4.ecommerce.services;
 
 import com.udacity.jdnd.course4.ecommerce.InjectMockUtils;
-import com.udacity.jdnd.course4.ecommerce.controller.UserController;
 import com.udacity.jdnd.course4.ecommerce.dto.request.UserCreateRequest;
 import com.udacity.jdnd.course4.ecommerce.entities.User;
 import com.udacity.jdnd.course4.ecommerce.repository.CartRepository;
@@ -19,13 +18,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class UserControllerTest {
+public class UserServiceTest {
 
     public static final String USER_NAME = "ThaiNT11";
     public static final String PASSWORD = "Password";
     public static final String IS_HASHED = "isHashed";
 
-    private  UserService userService;
+    private UserService userService;
 
     private final UserRepository userRepository = mock(UserRepository.class);
 

@@ -1,13 +1,11 @@
 package com.udacity.jdnd.course4.ecommerce.services;
 
 import com.udacity.jdnd.course4.ecommerce.InjectMockUtils;
-import com.udacity.jdnd.course4.ecommerce.controller.ItemController;
 import com.udacity.jdnd.course4.ecommerce.entities.Item;
 import com.udacity.jdnd.course4.ecommerce.repository.ItemRepository;
 import com.udacity.jdnd.course4.ecommerce.service.ItemService;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InjectMocks;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
