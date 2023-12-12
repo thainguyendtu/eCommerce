@@ -10,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
@@ -31,7 +30,7 @@ public class UserServiceTest {
 
     private final CartRepository cartRepository = mock(CartRepository.class);
 
-    private final PasswordEncoder encoder = mock(PasswordEncoder.class);
+    private final BCryptPasswordEncoder encoder = mock(BCryptPasswordEncoder.class);
 
     @Before
     public void setUp() {
