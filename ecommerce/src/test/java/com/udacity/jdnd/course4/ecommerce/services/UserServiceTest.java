@@ -51,18 +51,12 @@ public class UserServiceTest {
         requestCreate.setConfirmPassword("Password");
 
         final ResponseEntity<User> response = userService.createUser(requestCreate);
-        System.out.println("response: " + response);
         assertNotNull(response);
-        System.out.println("response: " + response);
         assertEquals(200, response.getStatusCodeValue());
-        System.out.println("response: " + response);
 
         User user = response.getBody();
-        System.out.println("response: " + response);
         assertNotNull(user);
-        System.out.println("response: " + response);
         assertEquals(USER_NAME, user.getUsername());
-        System.out.println("response: " + response);
         assertEquals(IS_HASHED, user.getPassword());
     }
 
