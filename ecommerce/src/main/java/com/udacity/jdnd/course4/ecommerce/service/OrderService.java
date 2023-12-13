@@ -1,6 +1,5 @@
 package com.udacity.jdnd.course4.ecommerce.service;
 
-import com.udacity.jdnd.course4.ecommerce.entities.Cart;
 import com.udacity.jdnd.course4.ecommerce.entities.User;
 import com.udacity.jdnd.course4.ecommerce.entities.UserOrder;
 import com.udacity.jdnd.course4.ecommerce.repository.OrderRepository;
@@ -37,7 +36,7 @@ public class OrderService {
             return ResponseEntity.notFound().build();
         }
 
-        UserOrder order = createOrderFromCart(user.getCart());
+        UserOrder order = UserOrder.createOrderFromCart(user.getCart());
         orderRepository.save(order);
         logger.error("Create user's order success.");
         return ResponseEntity.ok(order);
@@ -53,13 +52,5 @@ public class OrderService {
         List<UserOrder> userOrderList = orderRepository.findByUser(user);
         logger.info("Get order success");
         return ResponseEntity.ok(userOrderList);
-    }
-
-    private UserOrder createOrderFromCart(Cart cart) {
-        UserOrder order = new UserOrder();
-        order.setItems(cart.getItems());
-        order.setTotal(cart.getTotal());
-        order.setUser(cart.getUser());
-        return order;
     }
 }

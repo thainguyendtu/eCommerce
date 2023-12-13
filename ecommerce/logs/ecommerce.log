@@ -1,0 +1,28 @@
+2023-12-14 00:27:58,635 INFO c.u.j.c.e.EcommerceApplication [main] Starting EcommerceApplication on THAI-NGUYEN with PID 1536 (D:\Java-practice\udacity\eCommerce\ecommerce\target\classes started by Thai-Nguyen in D:\Java-practice\udacity\eCommerce\ecommerce)
+2023-12-14 00:27:58,653 INFO c.u.j.c.e.EcommerceApplication [main] No active profile set, falling back to default profiles: default
+2023-12-14 00:28:01,657 INFO c.u.j.c.e.EcommerceApplication [main] Started EcommerceApplication in 3.301 seconds (JVM running for 4.028)
+2023-12-14 00:28:11,133 INFO c.u.j.c.e.s.UserService [http-nio-8080-exec-3] Username = thaint11
+2023-12-14 00:28:11,320 INFO c.u.j.c.e.s.UserService [http-nio-8080-exec-3] Create User success
+2023-12-14 00:28:22,717 INFO c.u.j.c.e.s.CartService [http-nio-8080-exec-2] Add item to cart success
+2023-12-14 00:28:37,466 INFO c.u.j.c.e.s.UserService [http-nio-8080-exec-5] User exist.
+2023-12-14 00:28:42,388 INFO c.u.j.c.e.s.OrderService [http-nio-8080-exec-7] Get order success
+2023-12-14 00:28:49,604 INFO c.u.j.c.e.s.ItemService [http-nio-8080-exec-8] Get item success.
+2023-12-14 00:29:00,372 INFO c.u.j.c.e.s.ItemService [http-nio-8080-exec-9] Get Items success.
+2023-12-14 00:33:01,405 INFO c.u.j.c.e.s.CartService [http-nio-8080-exec-3] Add item to cart success
+2023-12-14 00:33:16,965 INFO c.u.j.c.e.s.ItemService [http-nio-8080-exec-4] Get item success.
+2023-12-14 00:33:33,583 INFO c.u.j.c.e.s.ItemService [http-nio-8080-exec-2] Get Items success.
+2023-12-14 00:35:12,606 INFO c.u.j.c.e.EcommerceApplication [main] Starting EcommerceApplication on THAI-NGUYEN with PID 2380 (D:\Java-practice\udacity\eCommerce\ecommerce\target\classes started by Thai-Nguyen in D:\Java-practice\udacity\eCommerce\ecommerce)
+2023-12-14 00:35:12,613 INFO c.u.j.c.e.EcommerceApplication [main] No active profile set, falling back to default profiles: default
+2023-12-14 00:35:15,422 INFO c.u.j.c.e.EcommerceApplication [main] Started EcommerceApplication in 3.095 seconds (JVM running for 3.748)
+2023-12-14 00:35:30,225 INFO c.u.j.c.e.s.UserService [http-nio-8080-exec-1] Username = thaint11
+2023-12-14 00:35:30,388 INFO c.u.j.c.e.s.UserService [http-nio-8080-exec-1] Create User success
+2023-12-14 00:35:49,083 INFO c.u.j.c.e.s.UserService [http-nio-8080-exec-3] Username = thaint12
+2023-12-14 00:35:49,151 INFO c.u.j.c.e.s.UserService [http-nio-8080-exec-3] Create User success
+2023-12-14 00:36:52,557 INFO c.u.j.c.e.s.UserService [http-nio-8080-exec-6] Username = thaint13
+2023-12-14 00:36:52,625 INFO c.u.j.c.e.s.UserService [http-nio-8080-exec-6] Create User success
+2023-12-14 00:37:09,626 INFO c.u.j.c.e.s.CartService [http-nio-8080-exec-8] Add item to cart success
+2023-12-14 00:37:17,489 INFO c.u.j.c.e.s.CartService [http-nio-8080-exec-9] Add item to cart success
+2023-12-14 00:37:24,058 INFO c.u.j.c.e.s.CartService [http-nio-8080-exec-10] Add item to cart success
+2023-12-14 00:37:28,169 INFO c.u.j.c.e.s.CartService [http-nio-8080-exec-2] Add item to cart success
+2023-12-14 00:37:35,251 INFO c.u.j.c.e.s.CartService [http-nio-8080-exec-1] Add item to cart success
+2023-12-14 00:37:39,085 INFO c.u.j.c.e.s.CartService [http-nio-8080-exec-3] Add item to cart success
