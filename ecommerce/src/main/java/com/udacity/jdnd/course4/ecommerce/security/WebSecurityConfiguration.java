@@ -15,12 +15,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private UserDetailsServiceImpl userDetailsService;
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-    public WebSecurityConfiguration(UserDetailsServiceImpl userDetailsService,
-                                    BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public WebSecurityConfiguration(UserDetailsServiceImpl userDetailsService) {
         this.userDetailsService = userDetailsService;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     @Override
@@ -49,6 +50,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
             throws Exception {
         auth.parentAuthenticationManager(authenticationManagerBean())
             .userDetailsService(userDetailsService)
-            .passwordEncoder(bCryptPasswordEncoder);
+            .passwordEncoder(passwordEncoder());
     }
 }
