@@ -30,19 +30,19 @@ public class UserServiceTest {
 
     private final CartRepository cartRepository = mock(CartRepository.class);
 
-    private final BCryptPasswordEncoder encoder = mock(BCryptPasswordEncoder.class);
+    private final BCryptPasswordEncoder bCryptPasswordEncoder = mock(BCryptPasswordEncoder.class);
 
     @Before
     public void setUp() {
-        userService = new UserService(userRepository, cartRepository, encoder);
+        userService = new UserService(userRepository, cartRepository, bCryptPasswordEncoder);
         InjectMockUtils.inject(userService, "userRepository", userRepository);
         InjectMockUtils.inject(userService, "cartRepository", cartRepository);
-        InjectMockUtils.inject(userService, "encoder", encoder);
+        InjectMockUtils.inject(userService, "bCryptPasswordEncoder", bCryptPasswordEncoder);
     }
 
     @Test
     public void testCreateUserSuccess() {
-        when(encoder.encode(PASSWORD)).thenReturn(IS_HASHED);
+        when(bCryptPasswordEncoder.encode(PASSWORD)).thenReturn(IS_HASHED);
 
         UserCreateRequest requestCreate = new UserCreateRequest();
         requestCreate.setUsername(USER_NAME);
@@ -51,18 +51,24 @@ public class UserServiceTest {
         requestCreate.setConfirmPassword("Password");
 
         final ResponseEntity<User> response = userService.createUser(requestCreate);
+        System.out.println("response: " + response);
         assertNotNull(response);
+        System.out.println("response: " + response);
         assertEquals(200, response.getStatusCodeValue());
+        System.out.println("response: " + response);
 
         User user = response.getBody();
+        System.out.println("response: " + response);
         assertNotNull(user);
+        System.out.println("response: " + response);
         assertEquals(USER_NAME, user.getUsername());
+        System.out.println("response: " + response);
         assertEquals(IS_HASHED, user.getPassword());
     }
 
     @Test
     public void testFindUserById() {
-        when(encoder.encode(PASSWORD)).thenReturn(IS_HASHED);
+        when(bCryptPasswordEncoder.encode(PASSWORD)).thenReturn(IS_HASHED);
 
         UserCreateRequest requestCreate = new UserCreateRequest();
         requestCreate.setUsername(USER_NAME);
@@ -82,7 +88,7 @@ public class UserServiceTest {
 
     @Test
     public void testFindByUsername() {
-        when(encoder.encode(PASSWORD)).thenReturn(IS_HASHED);
+        when(bCryptPasswordEncoder.encode(PASSWORD)).thenReturn(IS_HASHED);
 
         UserCreateRequest requestCreate = new UserCreateRequest();
         requestCreate.setUsername(USER_NAME);
